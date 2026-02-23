@@ -26,7 +26,7 @@ A transaction where all operations succeed together or fail together.
 The minimum transaction fee required for a Stellar transaction to be processed.
 
 ### Base Reserve
-The minimum amount of XLM required to maintain an active Stellar account.
+The minimum amount of XLM required to maintain an active Stellar account. 
 
 ### Bridgelet
 An open-source infrastructure layer that enables sending blockchain payments to users without existing wallets by creating ephemeral accounts that can later be claimed and swept.
