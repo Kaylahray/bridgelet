@@ -222,5 +222,5 @@ Software or hardware used to manage blockchain accounts and keys.
 ### Web3
 A decentralized internet architecture powered by blockchain technologies.
 
-This glossary complements the ./getting-started.pdf and provides definitions for terminology used throughout the project.
+This glossary complements the docs/getting-started.pdf and provides definitions for terminology used throughout the project.
 
