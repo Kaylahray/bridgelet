@@ -22,9 +22,24 @@ Bridgelet is an open-source infrastructure SDK that enables organizations to sen
 
 ## Architecture
 
-- **[bridgelet-core](https://github.com/bridgelet-org/bridgelet-core):** Soroban smart contracts for on-chain account restrictions and sweep logic
-- **[bridgelet-sdk](https://github.com/bridgelet-org/bridgelet-sdk):** NestJS backend SDK for account lifecycle management and claim authentication
-- **[bridgelet-ui](https://github.com/bridgelet-org/bridgelet-frontend):** (Future) Next.js reference implementation for claim flows
+* **[bridgelet-core](https://github.com/bridgelet-org/bridgelet-core)**: Soroban smart contracts for on-chain restrictions
+* **[bridgelet-sdk](https://github.com/bridgelet-org/bridgelet-sdk)**: Backend SDK and API (NestJS + TypeScript)
+* **bridgelet-ui**: Reference UI demonstrating SDK integration (Next.js 16+, TypeScript, Tailwind CSS)
+  └─ Located in `frontend/` within this repository
+
+## Repository Structure
+
+This is a monorepo containing both the docs and frontend reference implementation:
+
+```text
+bridgelet/
+├── frontend/         # Next.js Reference UI
+│   ├── app/          # App router pages (/, /send, /claim/[token])
+│   ├── components/   # Reusable UI components
+│   ├── lib/          # Utilities and SDK wrappers
+│   └── ...
+└── docs/             # Technical specifications and guides
+```
 
 ## 📚 Documentation
 
@@ -40,25 +55,50 @@ Comprehensive documentation is available in the [`/docs`](./docs) directory:
 | [📋 MVP Specification](https://github.com/bridgelet-org/bridgelet/raw/main/docs/mvp-specification.pdf) | Minimum viable product requirements              |
 | [🧪 Testing Guide](./TESTING.md)                                                                       | Testing strategy, guidelines, and best practices |
 
-> **📌 Note:** If PDFs don't render in your browser, click the links above to download them directly, or see the [docs README](./docs/README.md) for alternative viewing methods.
+> **📌 Note:** If PDFs don't render in your browser, click the links above to download them directly, or see the [docs directory](./docs) for more information.
 
 This documentation is actively maintained and will evolve as the project progresses.
 
 ## Quick Start
 
-```bash
-# Clone repositories
-git clone https://github.com/bridgelet-org/bridgelet-sdk.git
-git clone https://github.com/bridgelet-org/bridgelet-core.git
+### Frontend Setup
 
-# See individual repo READMEs for setup instructions
+The reference UI is built with **Next.js 16+**, **TypeScript 5+** (Strict Mode), and **Tailwind CSS**.
+
+To run the frontend locally:
+
+```bash
+# Navigate to the frontend directory
+cd frontend
+
+# Set up environment variables
+cp .env.example .env.local
+
+# Install dependencies
+npm install
+
+# Run the development server
+npm run dev
 ```
+
+The application will be available at `http://localhost:3000`. 
+
+#### Core Pages:
+- `/` — Homepage & Explainer
+- `/send` — Sender Flow (Create ephemeral account)
+- `/claim/[token]` — Recipient Flow (Direct claim redemption)
+
+### SDK & Core Setup
+
+For backend or smart contract development, please refer to the specific repositories:
+- [bridgelet-sdk](https://github.com/bridgelet-org/bridgelet-sdk) setup instructions
+- [bridgelet-core](https://github.com/bridgelet-org/bridgelet-core) setup instructions
 
 ## Repositories
 
 - **[bridgelet-sdk](https://github.com/bridgelet-org/bridgelet-sdk)** - Backend SDK (NestJS + TypeScript)
 - **[bridgelet-core](https://github.com/bridgelet-org/bridgelet-core)** - Smart contracts (Soroban + Rust)
-- **[bridgelet-frontend](https://github.com/bridgelet-org/bridgelet-frontend)** - Reference UI implementation (Coming soon)
+- **bridgelet** - Reference UI implementation and documentation (This repository)
 
 ## MVP Scope (v0.1)
 
